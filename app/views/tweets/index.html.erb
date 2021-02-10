@@ -1,14 +1,14 @@
-<main class="main">
+<div class="main">
   <div class="inner">
     <%# ログインしているときは以下を表示する %>
-      
+      <%= render partial: 'tweet', collection: @tweets %>
       
 
     <%# // ログインしているときは上記を表示する %>
     
   </div>
- 
-  <div class='footer'>
+  <div class="wrapper"> 
+  <footer>
   <div class='footer-contents'>
     <div class='furima-details'>
       <h2 class='footer-content-head'>SecondHouseについて</h2>
@@ -31,7 +31,7 @@
   </div>
   
   <p>© SecondHouse</p>
- </div>
-    
+ </footer>
+ </div>   
 
-</main>
+</div>
