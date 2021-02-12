@@ -1,10 +1,15 @@
 <%= form_with(model: tweet, local: true) do |f|%>
-  <div class="field">
+  <div class="fields">
     <%= f.label :title, tweet.title %><br />
     <%= f.text_field :title,class: :title_text %>
   </div>
 
-  <div class="field">
+    <div class="fields">
+    <%= f.label :image, tweet.image %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="fields">
     <%= f.label :text, tweet.text %><br />
     <%= f.text_area :text, class: :form_text,rows: "10" %>
   </div>

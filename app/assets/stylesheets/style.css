@@ -92,15 +92,15 @@ a {
 }
 
 .wrapper{
-  min-height: 75.4vh;
+  min-height: 40vh;
   position: relative;/*←相対位置*/
-  padding-bottom: 120px;/*←footerの高さ*/
+  
   box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
 
 footer {
   width: 100vw;
-  padding: 5vh 0;
+  padding: 1vh 0;
   color: #FFF;
   background-color: #272727;
   text-align: center;

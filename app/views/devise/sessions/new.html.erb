@@ -1,11 +1,12 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
+
+  <div class='account_page_top'>
+  <div class="test">
+    <div class='account_page'>
       <h2>Log in</h2>
       <h5>登録しているユーザーでログイン</h5>
       <%= render "devise/shared/links"%>
     </div>
-    <div class='account-page__inner--right user-form'>
+    <div class='user-form'>
       <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
         <div class='field'>
           <div class='field-label'>
@@ -29,5 +30,5 @@
         </div>
       <% end %>
     </div>
+    </div>
   </div>
-</div>
