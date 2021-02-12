@@ -1,14 +1,29 @@
-<main class="main">
+<div class="main">
   <div class="inner">
-    <%# ログインしているときは以下を表示する %>
-      
-      
-
-    <%# // ログインしているときは上記を表示する %>
     
+   <div class="ok">
+   <h3>マイページ</h3>
+  <%= link_to "","#",class:"my-account"%>
   </div>
- 
-  <div class='footer'>
+  <div class="ok">
+  <h3>活動報告</h3>
+  <%= link_to "",new_tweet_path,class:"another-active"%>
+  </div>
+  
+  <%if user_signed_in?%>
+  <div class="ok">
+  <h3>チャットルーム</h3>
+  <%= link_to "",rooms_path(current_user.prefecture_now_id),class:"active-room"%> 
+  </div>
+  <%end%>
+  <div class="ok">
+  <h3>活動情報</h3>
+  <%= link_to "","#",class:"active-room"%> 
+
+  </div>
+  </div>
+  <div class="wrapper"> 
+  <footer>
   <div class='footer-contents'>
     <div class='furima-details'>
       <h2 class='footer-content-head'>SecondHouseについて</h2>
@@ -31,7 +46,7 @@
   </div>
   
   <p>© SecondHouse</p>
- </div>
-    
+ </footer>
+ </div>   
 
-</main>
+</div>

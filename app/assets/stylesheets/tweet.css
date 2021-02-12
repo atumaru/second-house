@@ -1,0 +1,58 @@
+.form_text {
+  resize: none;
+  width: 150%;
+  height: 400px;
+}
+
+.title_text {
+  width:100%
+}
+
+.card {
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 40px;
+}
+
+
+.inner {
+  display: flex;              /* フレックスボックスにする */
+    flex-wrap: wrap;            /* 折り返し指定 */
+    justify-content: space-between;
+    
+}
+
+.ok {
+  padding: 20px;
+}
+
+.ok h3 {
+  text-align: center;
+}
+
+.active-room {
+  background-image: url("camp.jpg"); 
+  width:  370px;      
+  height: 370px;       
+  border-radius: 50%;  
+  
+  display: inline-block;          
+  
+}
+
+
+
+.my-account {
+  background-image: url("run.jpg");  
+  width:  370px;       
+  height: 370px;    
+  border-radius: 50%;  
+  
+  display: inline-block;
+}
+.another-active {
+  background-image: url("active.jpg");  
+  width:  370px;       
+  height: 370px;       
+  border-radius: 50%;  
+ display: inline-block;          
+}

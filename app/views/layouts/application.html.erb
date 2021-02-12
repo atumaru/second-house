@@ -17,13 +17,13 @@
           <div class="nav__left">
             <h1><a href="/">SecondHouse</a></h1>
           </div>
-        
+            
             <%if user_signed_in?%>
             <div class="nav__right">
             <span>
               <%="こんにちは、#{current_user.nickname}さん"%>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "活動報告", new_tweet_path, class: :nav__btn %>
+              
               
              </span>
             </div> 

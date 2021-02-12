@@ -34,7 +34,7 @@ a {
   color: #3b4043;
 }
 
-/*フッター*/
+/*ヘッダー*/
 
 .header {
   background-color: #f1f8fe;
@@ -87,12 +87,25 @@ a {
 
 /*フッタ-*/
 
-.footer {
+.main {
+  position: relative;
+}
+
+.wrapper{
+  min-height: 40vh;
+  position: relative;/*←相対位置*/
+  
+  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
+footer {
   width: 100vw;
-  padding: 5vh 0;
+  padding: 1vh 0;
   color: #FFF;
   background-color: #272727;
   text-align: center;
+  position: absolute;
+  bottom: 0; 
 }
 
 .footer-contents {
