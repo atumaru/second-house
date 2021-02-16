@@ -1,13 +1,16 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.find(params[:user_id])
-    
+    @rooms = Room.all.order(:id)
+  end
+
+  def show
+    @room = Room.find(params[:id])
+    @messages = @room.messages
   end
   
   def new
     
     @room = Room.new
-    
   end
 
   def create

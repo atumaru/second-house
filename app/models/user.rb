@@ -7,5 +7,6 @@ extend ActiveHash::Associations::ActiveRecordExtensions
 
 has_many :room_users   
 has_many :rooms, through: :room_users  
-belongs_to :prefecture   
+belongs_to :prefecture  
+has_many :messages 
 end

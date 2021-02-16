@@ -1,0 +1,25 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_event {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  width: 100%;
+}
+
+.sche  {
+  
+  margin-top: 30px;
+  width: 200px;
+}
+
+.event {
+width: 700px;
+resize: none;
+height: 200px;
+}

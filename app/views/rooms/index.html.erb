@@ -1,3 +1,20 @@
-<div class="side-bar">
-     <%= render "messages/side_bar" %>
-    </div>
+<div class="room_event">
+<div class="chat-create">
+
+<%= link_to "チャットを作成する", new_room_path, class:"chat" %>
+
+
+<%= link_to "スケジュール確認/作成",events_path,class:"event"%>
+
+</div>
+
+
+
+<div class="room">
+  <ul>
+    <% @rooms.each do |room| %>
+      <li><%= link_to room.name{room.id}, room_path(room) %></li>
+    <% end %>
+  </ul>
+</div>
+</div>
