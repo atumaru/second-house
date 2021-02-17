@@ -1,0 +1,65 @@
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+.room  {
+  
+  width: 300px;
+  height: 100vh;
+  background:#333366;
+  
+  
+}
+
+.room li {
+  margin: 20px;
+}
+
+.room a {
+  color:white;
+}
+
+
+
+
+.user-name a {
+  font-size: 16px;
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.chat-create a {
+  font-size: 10px;
+  color: deepskyblue;
+  border: 1px solid lightblue;
+  padding: 14px;
+  margin-left: 180px;
+  
+}
+
+.chat-create {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+
+
+
+.room {
+  padding: 20px 0 40px;
+  overflow: scroll;
+}
+
+.room-name a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+
+
+

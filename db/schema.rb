@@ -37,11 +37,9 @@ ActiveRecord::Schema.define(version: 2021_02_16_045214) do
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "start_time", null: false
-    t.bigint "room_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_events_on_room_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -105,7 +103,6 @@ ActiveRecord::Schema.define(version: 2021_02_16_045214) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "events", "rooms"
   add_foreign_key "events", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"

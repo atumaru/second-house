@@ -23,6 +23,12 @@ li {
   font-size: 13px;
 }
 
+
+
+
+
+
+/*チャットルーム用*/
 .chat-room-form {
   width: 980px;
   margin: 60px auto;
@@ -110,6 +116,7 @@ li {
 .chat-room-user__name a {
   text-decoration: none;
   color: #38aef0;
+  
 }
 
 select {
@@ -117,12 +124,103 @@ select {
   height: 50px;
 }
 
-.top-header {
-  background-color: #434a54;
-  height: 80px;
-  width: 100%;
+/*チャットルーム用*/
+
+/*以下、①背景色など*/
+.line-bc {
+  padding: 20px 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 14px;
+  background: #7da4cd;
+
 }
 
-.field_with_errors {
-  display: contents;
+/*以下、②左側のコメント*/
+.balloon6 {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.balloon6 .faceicon {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+
+.balloon6 .faceicon img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.balloon6 .chatting {
+  width: 100%;
+  text-align: left;
+  
+  
+}
+
+
+.says p:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+.says p {
+  margin: 10px 0 10px 50px;
+  padding: 10px;
+  display: inline-block;
+  position: relative; 
+  
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+
+/*以下、③右側の緑コメント*/
+.mycomment {
+  margin: 10px 0;
+}
+.mycomment p {
+  display: inline-block;
+  position: relative; 
+  margin: 10px  0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+}
+
+.mycomment p:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
+
+
+
+.line__title {
+  background-color:greenyellow;
+}
+
+
+
+.say {
+  text-align: center;
+ margin:20px 0
 }

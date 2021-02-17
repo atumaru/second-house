@@ -13,7 +13,7 @@
   <%if user_signed_in?%>
   <div class="ok">
   <h3>チャットルーム</h3>
-  <%= link_to "",rooms_path(current_user.prefecture_now_id),class:"active-room"%> 
+  <%= link_to "",chat_rooms_path(current_user.prefecture_now_id),class:"active-room"%> 
   </div>
   <%end%>
   <div class="ok">
