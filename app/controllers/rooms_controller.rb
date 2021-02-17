@@ -1,22 +1,27 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.find(params[:user_id])
+    @room = Room.new
+  end
+
+  def show
+    @room = Room.find(params[:id])
+    @messages = @room.messages
+    @message = Message.find(params[:id])
     
   end
   
   def new
     
     @room = Room.new
-    
   end
 
   def create
     
     @room = Room.new(room_params)
     if @room.save
-      redirect_to rooms_path(current_user.prefecture_now_id)
+      redirect_to chat_rooms_path(current_user.prefecture_now_id)
     else
-      render :new
+      render new_room_path
     end
 
   end
@@ -32,7 +37,7 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:name, user_ids: [])
+    params.require(:room).permit(:name,:chat_room_id, user_ids: [])
   end
 
 end

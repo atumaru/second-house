@@ -1,0 +1,44 @@
+
+<div class="line__title">
+<h1><%= @room.name%></h1>
+</div>
+
+<div class="line-bc">
+<% if @messages!=nil%>
+<% if current_user.id == @message.user_id%>
+
+ <div class="mycomment">
+    
+    <div  id='messages' data-room_id="<%= @room.id %>">
+  <%= render @messages %>
+  </div>
+    
+  </div>
+  
+  
+  
+  <%else%>
+ <div class="balloon6">
+    <div class="faceicon">
+      
+    </div>
+    <div class="chatting">
+      <div class="says">
+      <div  id='messages' data-room_id="<%= @room.id %>">
+  <%= render @messages %>
+ </div>
+ 
+      </div>
+    </div>
+  </div>
+  <%end%>
+  <%end%>
+ <div class="say">
+<%= label_tag :content, 'Say something:' %>
+<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
+</div>
+  
+  
+</div>
+
+

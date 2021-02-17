@@ -1,0 +1,27 @@
+
+
+<%= form_with(model: @event,url:chat_room_events_path, local: true) do |form| %>
+
+<div class="new_event">
+  <div class="sche">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title %>
+  </div>
+
+    <div class="sche">
+    <%= form.label :日時 %>
+    <%= form.datetime_field :start_time %>
+  </div>
+
+  <div class="sche">
+    <%= form.label :活動内容 %>
+    <%= form.text_area :content,class: :event %>
+  </div>
+
+
+  <div class="sche">
+    <%= form.submit %>
+  </div>
+  
+
+<% end %>
