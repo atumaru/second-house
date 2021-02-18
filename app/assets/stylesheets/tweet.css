@@ -1,11 +1,17 @@
 .form_text {
   resize: none;
-  width: 150%;
+  width: 40%;
   height: 400px;
 }
 
 .title_text {
-  width:100%
+  width:40%
+}
+
+.form_image {
+  width: 40%;
+  text-align: center;
+  margin-left: 450px;
 }
 
 .card {
@@ -14,11 +20,11 @@
 }
 
 
-.inner {
-  display: flex;              /* フレックスボックスにする */
-    flex-wrap: wrap;            /* 折り返し指定 */
-    justify-content: space-between;
-    
+.form__wrapper{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
 }
 
 .ok {
@@ -29,15 +35,47 @@
   text-align: center;
 }
 
+.chatt h3 {
+  text-align: center;
+}
+
+.inner_2 {
+  display: flex;
+  justify-content: center;
+}
+
 .active-room {
   background-image: url("camp.jpg"); 
   width:  370px;      
   height: 370px;       
   border-radius: 50%;  
-  
-  display: inline-block;          
-  
+ display: inline-block;            
 }
+
+
+.prefecture_tweet {
+  margin: 2em 0;
+  background: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+  width: 700px;
+  margin: 0 auto;
+}
+.prefecture_tweet .tweet_show {
+  font-size: 1.2em;
+  background: #5fc2f5;
+  padding: 4px;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+.prefecture_tweet p {
+  padding: 15px 20px;
+  margin: 0;
+  text-align: center;
+  align-items: center;
+}
+
 
 
 

@@ -4,7 +4,7 @@
   <%= date.day %>
 <% events.each do |event| %>
     <div>
-      <%=link_to event.title,chat_room_event_path(event.id) %>
+      <%=link_to event.title,"#"%>
     </div>
   <% end %>
 <% end %>

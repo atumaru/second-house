@@ -2,24 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .new_event {
-  
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  text-align: center;
   
-  width: 100%;
+
 }
 
-.sche  {
+.event_schedule {
+  resize: none;
+  width: 40%;
+  height: 400px;
   
-  margin-top: 30px;
-  width: 200px;
+  
 }
 
-.event {
-width: 700px;
-resize: none;
-height: 200px;
+.event_text {
+  width: 40%;
+  
 }
+
