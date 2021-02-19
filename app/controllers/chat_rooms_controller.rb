@@ -1,7 +1,10 @@
 class ChatRoomsController < ApplicationController
   def index
-    @rooms = Room.all.order(:id)
     
+    now_id = current_user.prefecture_now_id
+    @rooms = Room.where(prefecture_id: now_id)
+   
+
   end
 
 end

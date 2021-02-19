@@ -2,14 +2,14 @@ Rails.application.routes.draw do
   
   
   devise_for :users
+ 
+  root to: "tweets#index"
+  resources :tweets,only:[:index,:new,:create,:show]
+  resources :chat_rooms 
   resources :rooms,only:[:index,:new,:destroy,:create,:show]  do
     resources :messages,only:[:index,:create]
   end
-  root to: "tweets#index"
-  resources :tweets,only:[:index,:new,:create,:show]
-  resources :chat_rooms do
-  resources :rooms,only:[:index,:new,:destroy,:create,:show]  
   resources :events
-  end
+  resources :prefecture_tweets,only:[:index]
 
 end

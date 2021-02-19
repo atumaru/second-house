@@ -68,7 +68,7 @@
           現在のお住まい
           <span class="field-label">必須</span>
         </div>
-        <%= f.collection_select(:prefecture_now_id, Prefecture.all, :id, :name, {}, {class:"prefecture", id:"user-now-prefecture"}) %>
+        <%= f.collection_select(:prefecture_now_id, PrefectureNow.all, :id, :name, {}, {class:"prefecture", id:"user-now-prefecture"}) %>
         
         <div class='actions'>
           <%= f.submit "Create Account", class: 'btn'%>
