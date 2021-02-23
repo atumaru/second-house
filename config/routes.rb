@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :messages,only:[:index,:create]
   end
   resources :events
+  
   resources :prefecture_tweets,only:[:index]
-
+  
 end

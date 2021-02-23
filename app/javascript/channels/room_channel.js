@@ -11,17 +11,7 @@ $(function() {
     },
 
     received: function(data) {
-      if (data["isCurrent_user"]==true){
-        content=`<div class='mycomment'>${data["render @messages"]}</div>`;
-      }
-      //画面を開いているのがチャット受信者だった場合
-      else{
-        content=`<div class='balloon6'><div class='faceicon'>
-
-        <div class='chatting'><div class='says'>${data["render @messages"]}
-        </div></div></div>`;
-      }
-
+ 
       return $('#messages').append(data['message']);
     },
 
