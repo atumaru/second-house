@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: %i[index create new destroy] 
-  before_action :move_to_index,only: %i[ create  destroy show] 
+  
   def index
     @room = Room.new
      
@@ -8,13 +8,6 @@ class RoomsController < ApplicationController
        
   end
 
-  def show
-    @room = Room.find(params[:id])
-    @messages = @room.messages
-    @message = Message.find(params[:id])
-    
-  end
-  
   def new
     
     @room = Room.new
@@ -31,6 +24,16 @@ class RoomsController < ApplicationController
 
   end
 
+
+  def show
+    @room = Room.find(params[:id])
+    @messages = @room.messages
+    @message = Message.find(params[:id])
+    
+  end
+  
+
+
   def destroy
     room = Room.find(params[:id])
     room.destroy
@@ -41,16 +44,9 @@ class RoomsController < ApplicationController
 
   private
 
-  def move_to_index
-    @room = Room.find(params[:id])
-   if current_user.prefecture_now_id != @room.prefecture_id
-    redirect_to root_path
-   end
-   
-  end
-
+  
   def room_params
-    params.require(:room).permit(:name,:chat_room_id, user_ids: []).merge(prefecture_id:current_user.prefecture_now_id)
+    params.require(:room).permit(:name).merge(prefecture_id:current_user.prefecture_now_id)
   end
 
 end

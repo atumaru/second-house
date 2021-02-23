@@ -5,33 +5,21 @@
 
 <div class="line-bc">
 <% if @messages!=nil%>
-<% if current_user.id == @message.user_id%>
-
- <div class="mycomment">
-    
-    <div  id='messages' data-room_id="<%= @room.id %>">
-  <%= render @messages %>
-  </div>
-    
-  </div>
-  
-  
-  
-  <%else%>
- <div class="balloon6">
+<%= render @messages %>
+<div class="balloon6">
     <div class="faceicon">
       
     </div>
     <div class="chatting">
-      <div class="says">
+     
       <div  id='messages' data-room_id="<%= @room.id %>">
-  <%= render @messages %>
+     
  </div>
  
-      </div>
+      
     </div>
   </div>
-  <%end%>
+
   <%end%>
  <div class="say">
 <%= label_tag :content, 'Say something:' %>
