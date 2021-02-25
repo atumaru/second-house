@@ -1,5 +1,5 @@
 <div class="card">
-  <%= link_to image_tag(prefecture_tweet.image, class: :card__img ), "#" %>
+  <%= link_to image_tag(prefecture_tweet.image, class: :card__img ), tweet_path(prefecture_tweet.id) %>
   <div class="card__body">
     <%= link_to prefecture_tweet.title, "#", class: :card__title%>
     <p class="card__summary">
