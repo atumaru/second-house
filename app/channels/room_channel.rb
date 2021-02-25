@@ -21,7 +21,7 @@ class RoomChannel < ApplicationCable::Channel
     isCurrent_user: true
 
     RoomChannel.broadcast_to data["!current_user_id"].to_i,
-        content: data["sentence"],
+        content: data["message"],
         isCurrent_user: false
    end
  end
