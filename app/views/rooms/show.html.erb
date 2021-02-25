@@ -5,27 +5,20 @@
 
 <div class="line-bc">
 <% if @messages!=nil%>
-<%= render @messages %>
-<div class="balloon6">
-    <div class="faceicon">
-      
-    </div>
-    <div class="chatting">
-     
-      <div  id='messages' data-room_id="<%= @room.id %>">
-     
+   <div id='messages' data-room_id="<%= @room.id %>">
+     <%= render @messages %>
  </div>
- 
-      
-    </div>
-  </div>
+  
+
 
   <%end%>
+  <form>
  <div class="say">
 <%= label_tag :content, 'Say something:' %>
 <%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
 </div>
-  
+  </form>
+
   
 </div>
 
