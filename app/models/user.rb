@@ -27,10 +27,11 @@ end
 
 has_many :room_users   
 has_many :rooms, through: :room_users  
-belongs_to :prefecture  
-belongs_to :prefecture_now
 has_many :messages 
 has_many :tweets
+has_many :comments
+belongs_to :prefecture  
+belongs_to :prefecture_now
 
 
 end
