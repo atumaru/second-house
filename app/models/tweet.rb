@@ -9,5 +9,6 @@ class Tweet < ApplicationRecord
     validates :title
     validates :text
     validates :image
+    validates :prefecture_id
   end
 end

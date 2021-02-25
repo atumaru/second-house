@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   belongs_to :prefecture
 
@@ -7,5 +7,6 @@ class Event < ApplicationRecord
     validates :title
     validates :content
     validates :start_time
+    validates :prefecture_id
   end
 end
