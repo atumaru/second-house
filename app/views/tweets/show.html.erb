@@ -1,7 +1,15 @@
+<div class="tweet_all">
+ <div class ="tweet_title">
  <%="title:#{@tweet.title}"%>
- <%= image_tag @tweet.image %>
+ </div>
+ <div class="tweet_image">
+ <%= image_tag @tweet.image.variant(resize:'500x500') %>
+ </div>
+ <div class="tweet_text">
 <%="message:#{@tweet.text}"%>
-<div class="prototype__comments">
+</div>
+</div>
+<div class="tweet_comments">
         <% if user_signed_in? %>
           <%= form_with model: [ @tweet,@comment], local: true do |f|%>
             <div class="field">
