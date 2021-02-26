@@ -11,22 +11,12 @@ $(function() {
     },
 
     received: function(data) {
-      if (data["isCurrent_user"]==true){
-        content=`<div class='mycomment'><p>${data["message"]}</p></div>`;
-      }
-      else{
-        content=`<div class='balloon6'><div class='faceicon'>
-        
-        <div class='chatting'><div class='says'><p>${data["message"]}</p>
-        </div></div>`;
-      }
       return $('#messages').append(data['message']);
     },
 
     speak: function(message) {
-      current_user_id=$("#current_user_id").val();
       return this.perform('speak', {
-        message: message,current_user_id: current_user_id
+        message: message
       });
     }
   });
