@@ -1,0 +1,10 @@
+<div class ="wrapper">
+<div class="side-bar">
+<%= render partial: "side_bar",locals: {p: @p} %>
+</div>
+<div>
+ <% @results.each do |tweet| %>
+    <%= render partial: "tweet", locals: { tweet: tweet } %>
+  <% end %>
+  </div>
+</div>

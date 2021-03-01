@@ -1,6 +1,9 @@
-<div class="prefecture_name">
-<%=@name%>
-</div>
+<div class ="wrapper">
+<div class="side-bar">
+    <%= render partial:"tweets/side_bar",locals: {p: @p} %>
+  </div>
 
+<div class="tweet_sub">
 <%= render partial: 'prefecture_tweet', collection: @prefecture_tweets %>
-
+</div>
+</div>

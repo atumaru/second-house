@@ -1,15 +1,19 @@
+<div class ="wrapper">
+<div class="side-bar">
+<%= render partial: "side_bar" %>
+</div>
 <div class="tweet_all">
  <div class ="tweet_title">
- <%="title:#{@tweet.title}"%>
+ <%="Title:#{@tweet.title}"%>
  </div>
  <div class="tweet_image">
- <%= image_tag @tweet.image.variant(resize:'500x500') %>
+ <%= image_tag @tweet.image,size: "500x400" %>
  </div>
  <div class="tweet_text">
-<%="message:#{@tweet.text}"%>
+    <span class="box-title">投稿者から一言</span>
+<p><%=@tweet.text%></p>
 </div>
-</div>
-<div class="tweet_comments">
+
         <% if user_signed_in? %>
           <%= form_with model: [ @tweet,@comment], local: true do |f|%>
             <div class="field">
@@ -21,12 +25,14 @@
             </div>
           <% end %> 
         <% end %>
-        <ul class="comments_lists">
+        <blockquote>
+        <p> <%="コメント一覧" %> </p>
           <% @comments.each do |comment| %>
-            <li class="comments_list">
-              <%= comment.text%>
-              <%= link_to "（#{comment.user.nickname}）", "#", class: :comment_user %>
-            </li>
+            
+             
+             <p> <%=  comment.user.nickname%>:<%=comment.text %> </p>
+            
           <% end %>
-        </ul>
+        </blockquote>
+      </div>
       </div>

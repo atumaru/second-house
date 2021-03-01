@@ -13,6 +13,7 @@ end
 
 def create
    @tweet = Tweet.create(tweet_params)
+   
   if @tweet.save
     redirect_to prefecture_tweets_path(current_user.prefecture_now_id)
   else
@@ -26,6 +27,13 @@ def show
   @comments = @tweet.comments.includes(:user)
   
 end
+
+def search
+  @p =Tweet.ransack(params[:q])  
+  @results = @p.result
+
+end
+
 
 private
 

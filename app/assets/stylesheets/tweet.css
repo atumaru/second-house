@@ -8,6 +8,12 @@
   width:40%
 }
 
+.form_main {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .form_image {
   width: 40%;
   text-align: center;
@@ -21,11 +27,29 @@
 
 
 .form__wrapper{
-  display: flex;
-  flex-direction: column;
+  
   text-align: center;
   
 }
+
+.sub_form {
+  text-align: center;
+  width: calc(100vw - 300px);
+  padding: 10px;
+  margin: 1em 0;
+  padding: 1.5em 1em 1em;
+  position: relative;
+  
+  margin:0 auto;
+  margin-right: 10px ;
+  margin-bottom: 30px;
+}
+
+.form_image {
+  margin-right: 140px;
+}
+
+
 
 .ok {
   padding: 20px;
@@ -78,7 +102,6 @@
 
 
 
-
 .my-account {
   background-image: url("run.jpg");  
   width:  370px;       
@@ -93,4 +116,34 @@
   height: 370px;       
   border-radius: 50%;  
  display: inline-block;          
+}
+
+.tweet_text {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #95ccff;
+  border-radius: 8px;
+  
+
+}
+.tweet_text .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 19px;
+  background: #FFF;
+  color: #95ccff;
+  font-weight: bold;
+}
+.tweet_text p {
+  margin: 0; 
+  padding: 0;
+}
+
+.search_prefecture {
+  width: 9px;
 }

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root to: "tweets#index"
   resources :tweets,only:[:index,:new,:create,:show] do
     resources :comments, only:[:create] 
+    collection do
+      get 'search'
+    end
   end
   resources :chat_rooms 
   resources :rooms,only:[:index,:new,:destroy,:create,:show]  do

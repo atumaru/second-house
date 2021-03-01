@@ -8,8 +8,13 @@
   width: 300px;
   height: 100vh;
   background:#333366;
+  padding: 20px 0 40px;
+  overflow: scroll;
   
-  
+}
+
+.room h1 {
+  color: #fafafa;
 }
 
 .room li {
@@ -19,6 +24,7 @@
 .room a {
   color:white;
 }
+
 
 
 
@@ -34,23 +40,22 @@
   color: deepskyblue;
   border: 1px solid lightblue;
   padding: 14px;
-  margin-left: 180px;
+  
   
 }
 
 .chat-create {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 30px;
+  width:calc(100vw-600px);
+  
 }
 
 
 
 
-.room {
-  padding: 20px 0 40px;
-  overflow: scroll;
-}
+
 
 .room-name a {
   text-decoration: none;

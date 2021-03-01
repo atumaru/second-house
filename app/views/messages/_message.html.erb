@@ -1,5 +1,6 @@
 <div class='message'>
-<% if current_user.id == message.user_id%>
+ <% if current_user.id == message.user_id%>
+ 
  <div class="mycomment">
  
   <p><%= "#{message.user.nickname}: #{message.content}" %></p>

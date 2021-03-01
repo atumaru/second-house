@@ -1,11 +1,15 @@
-<div class="card">
-  <%= image_tag tweet.image, class: "item-img"  if tweet.image.attached?  %>
-  <div class="card__body">
-    <%= link_to tweet.title, "#", class: :card__title%>
-    <p class="card__summary">
-      <%= tweet.text %>
-    </p>
-    
+<div class="tweet_all">
+ <div class ="tweet_title">
+ <%="Title:#{tweet.title}"%> <%="#{(tweet.prefecture.name)}"%>
+ 
+ </div>
+ <div class="tweet_image">
+  <%= link_to image_tag(tweet.image), tweet_path(tweet.id) %>
   </div>
+  
+    <div class="tweet_text">
+    <span class="box-title">投稿者から一言</span>
+<p><%=tweet.text%></p>
 </div>
+</div >
 

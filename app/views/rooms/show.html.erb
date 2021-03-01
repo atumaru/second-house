@@ -6,7 +6,7 @@
 <div class="line-bc">
 <% if @messages!=nil%>
    <div id='messages' data-room_id="<%= @room.id %>">
-     <%= render @messages %>
+     <%= render partial: "messages/message",collection: @messages,as: :message,locals: {current_user:current_user} %>
  </div>
   
 
