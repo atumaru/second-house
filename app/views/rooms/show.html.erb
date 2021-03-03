@@ -1,9 +1,15 @@
+<div class="line_room">
 
+
+<div class="side-bar">
+<%= render partial: "chat_rooms/room" %>
+</div>
+
+
+<div class="line-bc">
 <div class="line__title">
 <h1><%= @room.name%></h1>
 </div>
-
-<div class="line-bc">
 <% if @messages!=nil%>
    <div id='messages' data-room_id="<%= @room.id %>">
      <%= render partial: "messages/message",collection: @messages,as: :message,locals: {current_user:current_user} %>
@@ -22,4 +28,17 @@
   
 </div>
 
+<div class="room">
+
+  <ul>
+   <h1>チャットルーム一覧</h1>
+    <% @rooms.each do |room| %>
+      <li><%= link_to room.name, room_path(room) %></li>
+    <% end %>
+ 
+
+  </ul>
+</div>
+
+</div>
 

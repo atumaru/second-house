@@ -1,4 +1,9 @@
-<%= link_to 'イベント追加',   new_event_path %> 
+<div class="event_main">
+<div class="side-bar">
+    <%= render partial: "side_bar",locals: {p: @p} %>
+  </div>
+  <div class="event_sub">
+<%= link_to 'イベント追加',   new_event_path,class:"add_event" %> 
 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
@@ -8,3 +13,5 @@
     </div>
   <% end %>
 <% end %>
+</div>
+</div>

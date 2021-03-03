@@ -1,62 +1,24 @@
 <div class="main">
-  <div class="inner">
-    
-   <div class="ok">
-   <h3>マイページ</h3>
-  <%= link_to "","#",class:"my-account"%>
+  
+
+  <div class="side-bar">
+  <%= render partial: "chat_rooms/room" %>
   </div>
-  <div class="ok">
-  <h3>活動報告</h3>
-  <%= link_to "",new_tweet_path,class:"another-active"%>
-  </div>
-  </div>
-  <%if user_signed_in?%>
-  <div class="inner_2">
-  <div class="ok chatt">
-  <h3>チャットルーム</h3>
-  <%= link_to "",chat_rooms_path(current_user.prefecture_now_id),class:"active-room"%> 
-  </div>
-  </div>
-  <%end%>
+  
+  <div class="main_cont">
+  <div class="main_prefecture">
   <div class="prefecture_tweet">
   <div class="tweet_show">
   活動情報(都道府県をクリックしてください)
   </div>
   <p>
    <%= render partial: "prefecture" %>
-  <%# <%= render partial: "prefecture", {prefectures: @prefectures} %>  
-  
   </p>
  </div>
-
-
+ </div>
   
   
-  <div class="wrapper"> 
-  <footer>
-  <div class='footer-contents'>
-    <div class='furima-details'>
-      <h2 class='footer-content-head'>SecondHouseについて</h2>
-      <ul>
-        <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></li>
-        <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></li>
-        <li><%= link_to 'SecondHouse利用規約', "#", class: "footer-link" %></li>
-        
-      </ul>
-    </div>
-    
-    <div class='furima-details'>
-      <h2 class='footer-content-head'>アナウンス</h2>
-      <ul>
-        <li><%= link_to 'SecondHouseガイド', "#", class: "footer-link" %></li>
-        
-        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
-      </ul>
-    </div>
-  </div>
-  
-  <p>© SecondHouse</p>
- </footer>
- </div>   
 
+
+</div>
 </div>

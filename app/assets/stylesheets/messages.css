@@ -4,12 +4,16 @@
 }
 
 .room  {
-  
+ 
   width: 300px;
   height: 100vh;
   background:#333366;
   padding: 20px 0 40px;
-  overflow: scroll;
+  position: sticky;
+  margin-bottom: 0;
+  top: 10px;
+  z-index: 1;
+  
   
 }
 
@@ -46,12 +50,15 @@
 
 .chat-create {
   display: flex;
-  justify-content: space-around;
-  margin: 30px;
-  width:calc(100vw-600px);
+  width: 500px;
+  justify-content: space-between;
   
 }
 
+.chat  {
+  margin-top: 10px;
+  margin-left: 10px;
+}
 
 
 

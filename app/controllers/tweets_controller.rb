@@ -9,6 +9,8 @@ end
 
 def new
   @tweet = Tweet.new
+  @p =Tweet.ransack(params[:q])  
+  @results = @p.result
 end
 
 def create
@@ -22,6 +24,8 @@ def create
 end
 
 def show
+  @p =Tweet.ransack(params[:q])  
+  @results = @p.result
   @tweet = Tweet.find(params[:id])
   @comment = Comment.new
   @comments = @tweet.comments.includes(:user)

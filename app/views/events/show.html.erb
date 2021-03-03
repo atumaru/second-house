@@ -1,11 +1,15 @@
-<div class="event_show">
-<div class="event_title">
-<%=@event.title%>
+<div class="event_show ">
+<div class="side-bar">
+    <%= render partial: "side_bar",locals: {p: @p} %>
+  </div>
+  <div class="main_bar">
+  <h1>活動予定</h1>
+<ul class="event_show_page">
+  <li><span>タイトル</span>:<%= @event.title%></li>
+  <li><span>開始時間</span>:<%= @event.start_time%></li>
+    <li><span>活動内容</span>:<%= @event.content%></li>
+  
+</ul>
 </div>
-<div class="event_start_time">
-<%=@event.start_time%>
 </div>
-<div class="event_content">
-<%=@event.content%>
-</div>
-</div>
+

@@ -2,10 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, only: %i[index create new destroy] 
   
   def index
-    @room = Room.new
-     
-     
-       
+    @room = Room.new  
   end
 
   def new
@@ -26,12 +23,22 @@ class RoomsController < ApplicationController
 
 
   def show
+
+    now_id = current_user.prefecture_now_id
+    @rooms = Room.where(prefecture_id: now_id)
+
+
     @room = Room.find(params[:id])
     @messages = @room.messages
     if @message.present?
     @message = Message.find(params[:id])
     end
   end
+
+  def search
+    @rooms = Room.search(params[:keyword])
+  end
+
   
 
 

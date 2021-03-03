@@ -1,0 +1,83 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_page {
+  display: flex;
+  
+}
+
+.user_profile {
+  width: calc(100vw-300px);
+  margin: 0 auto;
+}
+
+
+.my_page {
+  counter-reset:number; 
+  list-style-type: none!important; 
+  padding:0;
+  width: 400px;
+  
+  
+  
+  
+  
+}
+.my_page li {
+  position: relative;
+  padding: 0.5em;
+  line-height: 1.5em;
+  background: #f1f8ff;
+  border-left : solid 35px #5c9ee7;
+  margin-bottom: 5px;
+  
+}
+.my_page li:before{
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  display:inline-block;
+  color: white;
+  font-family: 'Avenir','Arial Black','Arial',sans-serif;
+  font-weight:bold;
+  font-size: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: -35px;
+  width: 35px;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
+}
+
+.edit_page {
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  width: calc(100vw-300px);
+  
+}
+
+.edit_page_top {
+  display: flex;
+}
+
+.user_edit  {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  margin-top: 15px;
+
+}
+
+.user_edit:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}

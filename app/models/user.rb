@@ -7,7 +7,7 @@ extend ActiveHash::Associations::ActiveRecordExtensions
 
 with_options presence: true do
   validates :nickname
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 },on: :create
  
   validates :email, uniqueness: true
 end
@@ -17,7 +17,7 @@ with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/ } do
 end
 
 VALID_PASSWORD_REGEX = VALID_PASSWORD_REGEX = /\A(?=.*?[A-z])(?=.*?[\d])[A-z\d]+\z/.freeze
-validates :password, format: { with: VALID_PASSWORD_REGEX }
+validates :password, format: { with: VALID_PASSWORD_REGEX },on: :create
 
 with_options presence: true, numericality: { other_than: 1 } do
  validates :prefecture_id
