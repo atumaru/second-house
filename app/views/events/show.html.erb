@@ -1,6 +1,6 @@
 <div class="event_show ">
 <div class="side-bar">
-    <%= render partial: "side_bar",locals: {p: @p} %>
+    <%= render partial: "side_bar" %>
   </div>
   <div class="main_bar">
   <h1>活動予定</h1>
@@ -10,6 +10,12 @@
     <li><span>活動内容</span>:<%= @event.content%></li>
   
 </ul>
+  <div class="event_edit_destroy">
+   <% if user_signed_in? && current_user.id == @event.user_id %>
+  <%= link_to "編集する", edit_event_path(@event), class: :prototype__btn %>
+  <%= link_to "削除する", event_path(@event), method: :delete, class: :prototype__btn %>
+  <%end%>
+</div>
 </div>
 </div>
 

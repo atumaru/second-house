@@ -1,6 +1,6 @@
 
   <div class='account_page_top'>
-  <div class="test">
+  
     <div class='account_page'>
       <h1>Create Account</h1>
       <h5>新規アカウントの作成</h5>
@@ -71,9 +71,10 @@
         <%= f.collection_select(:prefecture_now_id, PrefectureNow.all, :id, :name, {}, {class:"prefecture", id:"user-now-prefecture"}) %>
         
         <div class='actions'>
-          <%= f.submit "Create Account", class: 'btn'%>
+          <%= f.submit "Create Account", class: 'btn_new'%>
         </div>
       </div>
     <% end %>
     </div>
   </div>
+  

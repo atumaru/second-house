@@ -95,9 +95,12 @@ a {
   display: flex;
 }
 
+
 .footer {
   background-color:black;
   padding: 10px 0;
   text-align: center;
   color: white;
+ 
+  bottom: 0; 
 }

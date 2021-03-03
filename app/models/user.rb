@@ -19,10 +19,11 @@ end
 VALID_PASSWORD_REGEX = VALID_PASSWORD_REGEX = /\A(?=.*?[A-z])(?=.*?[\d])[A-z\d]+\z/.freeze
 validates :password, format: { with: VALID_PASSWORD_REGEX },on: :create
 
-with_options presence: true, numericality: { other_than: 1 } do
- validates :prefecture_id
-  validates :prefecture_now_id
-end
+
+
+validate :add_prefecture
+validate :add_prefecture_id
+validate :add_prefecture_now_id
 
 
 has_many :room_users   
@@ -32,6 +33,27 @@ has_many :tweets
 has_many :comments
 belongs_to :prefecture  
 belongs_to :prefecture_now
+
+private
+
+def add_prefecture
+
+  if prefecture_id == prefecture_now_id
+    errors.add(:prefecture_id, "出身地と現在のお住まいは違う県を選んでください")
+  end
+end
+
+def add_prefecture_id
+if prefecture_id == 1
+errors.add(:prefecture_id, "出身地を選択してください")
+end
+end
+
+def add_prefecture_now_id
+  if prefecture_now_id == 1
+  errors.add(:prefecture_now_id, "出身地を選択してください")
+  end
+  end
 
 
 end

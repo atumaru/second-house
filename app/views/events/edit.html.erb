@@ -1,12 +1,12 @@
 
 <div class="new_event_main">
 <div class="side-bar">
-    <%= render partial: "side_bar",locals: {p: @p} %>
+    <%= render partial: "side_bar" %>
   </div>
   <div class="event_color">
 <div class="new_event">
 
-<%= form_with(model: @tweet,local: true) do |f| %>
+<%= form_with(model: @event,url:event_path, local: true) do |f| %>
  <%= render 'shared/error', model: f.object %>
 
 
@@ -17,13 +17,13 @@
   </div>
 
     <div class="event_time">
-    <h3>画像</h3>
-    <%= f.file_field :image,class: :event_image %>
+    <h3>日時</h3>
+    <%= f.datetime_field :start_time,class: :event_date %>
   </div>
 
   <div class="event_sche">
     <h3>活動内容</h3>
-    <%= f.text_area :text,class: :event_schedule %>
+    <%= f.text_area :content,class: :event_schedule %>
   </div>
 
 

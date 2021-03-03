@@ -3,7 +3,7 @@
  <%="Title:#{prefecture_tweet.title}"%>
  </div>
  <div class="tweet_image">
-  <%= link_to image_tag(prefecture_tweet.image), tweet_path(prefecture_tweet.id) %>
+  <%= link_to image_tag(prefecture_tweet.image), tweet_path(prefecture_tweet.id) if prefecture_tweet.image.attached? %>
   </div>
   
     <div class="tweet_text">

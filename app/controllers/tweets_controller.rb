@@ -8,16 +8,19 @@ def index
 end
 
 def new
-  @tweet = Tweet.new
   @p =Tweet.ransack(params[:q])  
   @results = @p.result
+  @tweet = Tweet.new
+  
 end
 
 def create
+  @p =Tweet.ransack(params[:q])  
+  @results = @p.result
    @tweet = Tweet.create(tweet_params)
    
   if @tweet.save
-    redirect_to prefecture_tweets_path(current_user.prefecture_now_id)
+    redirect_to prefecture_tweets_path(id:current_user.prefecture_now_id)
   else
     render :new
   end
@@ -32,10 +35,38 @@ def show
   
 end
 
+def edit
+  @p =Tweet.ransack(params[:q])  
+  @results = @p.result
+
+  @tweet = Tweet.find(params[:id])
+end
+
+def update
+  @p =Tweet.ransack(params[:q])  
+  @results = @p.result
+
+  @tweet = Tweet.find(params[:id])
+  if 
+    @tweet.update(tweet_params)
+    redirect_to tweet_path(@tweet)
+  else
+    render :edit
+  end
+
+end
+
 def search
   @p =Tweet.ransack(params[:q])  
   @results = @p.result
 
+end
+
+def destroy
+  @tweet = Tweet.find(params[:id])
+  if @tweet.destroy
+    redirect_to prefecture_tweets_path(id:current_user.prefecture_now_id)
+  end
 end
 
 

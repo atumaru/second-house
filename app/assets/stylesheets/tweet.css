@@ -29,7 +29,13 @@
 .form__wrapper{
   
   text-align: center;
+ 
   
+  
+}
+
+.main_form {
+  width: 700px;
 }
 
 .sub_form {
@@ -39,10 +45,16 @@
   margin: 1em 0;
   padding: 1.5em 1em 1em;
   position: relative;
-  
   margin:0 auto;
   margin-right: 10px ;
   margin-bottom: 30px;
+
+  
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: #EEEEEE	;
+  box-sizing: border-box;
+  
+  
 }
 
 .form_image {

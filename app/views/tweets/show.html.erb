@@ -2,7 +2,7 @@
 <div class="side-bar">
  <%= render partial: "side_bar",locals: {p: @p} %>
 </div>
-<div class="tweet_all">
+<div class="tweet_show_all">
  <div class ="tweet_title">
  <%="Title:#{@tweet.title}"%>
  </div>
@@ -34,6 +34,17 @@
              <p> <%=  comment.user.nickname%>:<%=comment.text %> </p>
             
           <% end %>
+
+            
+
         </blockquote>
+
+        <% if user_signed_in? && current_user.id == @tweet.user_id %>
+      
+        <div class="prototype__manage">
+          <%= link_to "編集する", edit_tweet_path(@tweet), class: :prototype__btn %>
+          <%= link_to "削除する", tweet_path(@tweet), method: :delete, class: :prototype__btn %>
+        </div>
+        <%end%>
       </div>
       </div>

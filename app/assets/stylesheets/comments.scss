@@ -2,24 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.tweet_sub {
+ 
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em;
+  background: white;
+}
+
 .tweet_all {
+  
+  border-radius: 10px;
   text-align: center;
-  width: calc(100vw - 300px);
   padding: 10px;
-  margin: 1em 0;
   padding: 1.5em 1em 1em;
   position: relative;
-  border: 0.5px solid black;
+  border: 2px solid gray;
   background-color: white	;
-  margin:0 auto;
-  margin-right: 10px ;
-  margin-bottom: 30px;
-  
-  
-  
+  --margin-left: 10px;
+  width: calc(49% - (3 * var(--margin-left) / 4));
+  margin-bottom: 1em;
+  margin-left: var(--margin-left);
+  margin-top: 20px;
   
 }
 
+.tweet_show_all {
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  padding: 1.5em 1em 1em;
+  position: relative;
+  border: 2px solid gray;
+  background-color: white	;
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 
 .tweet_title  {
