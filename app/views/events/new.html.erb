@@ -1,8 +1,14 @@
 
+<div class="new_event_main">
+<div class="side-bar">
+    <%= render partial: "side_bar",locals: {p: @p} %>
+  </div>
+  <div class="event_color">
+<div class="new_event">
 
 <%= form_with(model: @event,url:events_path, local: true) do |form| %>
 
-<div class="new_event">
+
   <div class="event_tie">
   <h3>title</h3>
    
@@ -16,7 +22,7 @@
 
   <div class="event_sche">
     <h3>活動内容</h3>
-    <%= form.text_area :content,class: :event_schedule,rows: "10" %>
+    <%= form.text_area :content,class: :event_schedule %>
   </div>
 
 
@@ -24,7 +30,10 @@
     <%= form.submit %>
   </div>
 
-  </div>
+
   
 
 <% end %>
+  </div>
+  </div>
+  </div>

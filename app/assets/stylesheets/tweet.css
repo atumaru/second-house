@@ -50,24 +50,6 @@
 }
 
 
-
-.ok {
-  padding: 20px;
-}
-
-.ok h3 {
-  text-align: center;
-}
-
-.chatt h3 {
-  text-align: center;
-}
-
-.inner_2 {
-  display: flex;
-  justify-content: center;
-}
-
 .active-room {
   background-image: url("camp.jpg"); 
   width:  370px;      
@@ -76,28 +58,40 @@
  display: inline-block;            
 }
 
+.main_cont {
+  width: 1140px;
+  min-height: 100vh;
+  position: relative;
+  
+}
+
+
 
 .prefecture_tweet {
-  margin: 2em 0;
+  
+  
+  text-align: center;
   background: #f1f1f1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
   width: 700px;
   margin: 0 auto;
+  margin-top: 20px;
 }
+
+
 .prefecture_tweet .tweet_show {
   font-size: 1.2em;
   background: #5fc2f5;
   padding: 4px;
-  text-align: center;
   color: #FFF;
   font-weight: bold;
   letter-spacing: 0.05em;
 }
+
 .prefecture_tweet p {
+ 
   padding: 15px 20px;
-  margin: 0;
-  text-align: center;
-  align-items: center;
+
 }
 
 
@@ -110,13 +104,7 @@
   
   display: inline-block;
 }
-.another-active {
-  background-image: url("active.jpg");  
-  width:  370px;       
-  height: 370px;       
-  border-radius: 50%;  
- display: inline-block;          
-}
+
 
 .tweet_text {
   position: relative;
@@ -144,6 +132,17 @@
   padding: 0;
 }
 
-.search_prefecture {
-  width: 9px;
+.prefecture {
+  height: 21px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.search-input {
+  width: 220px;
+}
+
+.search-btn {
+  margin-top: 10px;
 }

@@ -92,54 +92,12 @@ a {
 /*フッタ-*/
 
 .main {
-  position: relative;
-  
-}
-
-.wrapper{
-  min-height: 40vh;
-  position: relative;/*←相対位置*/
-  
-  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
-}
-
-footer {
-  width: 100vw;
-  padding: 1vh 0;
-  color: #FFF;
-  background-color: #272727;
-  text-align: center;
-  position: absolute;
-  bottom: 0; 
-}
-
-.footer-contents {
   display: flex;
-  justify-content: center;
-  margin-bottom: 5vh;
 }
 
-.furima-details {
-  margin: 0 4vw;
-}
-
-.footer-content-head {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.footer-link {
-  color: #FFF;
-  font-size: 12px;
-  line-height: 30px;
-}
-
-.logo-white {
-  width: 20vh;
-  vertical-align: bottom;
-}
-
-.footer>p {
-  font-size: 14px;
+.footer {
+  background-color:black;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
 }

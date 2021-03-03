@@ -1,10 +1,12 @@
 <div class="wrapper_chat">
+
 <div class="side-bar">
 <%= render partial: "room" %>
 </div>
 
 
-     <div class="chat-create">
+
+  <div class="chat-create">
 <div class="chat">
 <%= link_to "チャットを作成する", new_room_path %>
 </div>
@@ -17,15 +19,17 @@
 </div>
 
 <div class="room">
+
   <ul>
    <h1>チャットルーム一覧</h1>
+   
     <% @rooms.each do |room| %>
       <li><%= link_to room.name, room_path(room) %></li>
     <% end %>
-   </ul>
+ 
+
+  </ul>
 </div>
-
-
 
 
 </div>

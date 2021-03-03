@@ -1,6 +1,6 @@
 <div class ="wrapper">
 <div class="side-bar">
-<%= render partial: "side_bar" %>
+ <%= render partial: "side_bar",locals: {p: @p} %>
 </div>
 <div class="tweet_all">
  <div class ="tweet_title">
@@ -25,8 +25,9 @@
             </div>
           <% end %> 
         <% end %>
-        <blockquote>
         <p> <%="コメント一覧" %> </p>
+        <blockquote>
+        
           <% @comments.each do |comment| %>
             
              

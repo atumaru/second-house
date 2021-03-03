@@ -3,24 +3,135 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.new_event {
+.new_event_main,.event_main,.event_show {
   display: flex;
-  flex-direction: column;
-  text-align: center;
   
-
 }
 
-.event_schedule {
-  resize: none;
-  width: 40%;
-  height: 400px;
+.event_color {
   
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 700px;
+    box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+    background-color: #EEEEEE	;
+    box-sizing: border-box;
+    height: 500px;
+  
+}
+
+.new_event {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.event_tie h3,.event_time h3, .event_sche h3 {
+  float: left;
+  color: #666666;
+}
+
+.sche {
+  margin-top: 20px;
+}
+
+
+
+
+
+
+.event_sub {
+  width: 1120px;
+  margin-left:15px;
   
 }
 
 .event_text {
-  width: 40%;
+  width: 400px;
+  border-radius:30px;
   
+}
+
+.event_date {
+  width: 400px;
+  border-radius:30px;
+}
+
+.event_schedule {
+  width:400px ;
+  height: 160px;
+  resize: none;
+  
+}
+
+.add_event {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #668ad8;
+  border-right: solid 4px #668ad8;
+  color: #668ad8;
+  text-shadow: 0 0 5px white;
+  padding: 0.5em 1em;
+  background: repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  transition: .4s;
+  margin-top: 10px;
+}
+
+.event_show_page span {
+  font-weight: bold;
+}
+
+.main_bar {
+  margin: 0 auto;
+  margin-top: 20px;
+    width: 700px;
+    box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+    background-color: #FFFFF0	;
+    box-sizing: border-box;
+    height: 500px;
+  
+}
+
+.event_show_page {
+  counter-reset:number; 
+  list-style-type: none!important; 
+  padding:0;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+  
+  
+  
+}
+.event_show_page li {
+  position: relative;
+  padding: 0.5em;
+  line-height: 1.5em;
+  background: #f1f8ff;
+  border-left : solid 35px #5c9ee7;
+  margin-bottom: 15px;
+  
+  
+}
+.event_show_page li:before{
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  display:inline-block;
+  color: white;
+  font-family: 'Avenir','Arial Black','Arial',sans-serif;
+  font-weight:bold;
+  font-size: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: -35px;
+  width: 35px;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
 }
 
