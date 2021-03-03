@@ -1,13 +1,18 @@
 
  <div class= "sub_side_bar">
- 
+ <%if user_signed_in?%>
   <li><%=link_to"TOPページへ",root_path%></li>
   <li><%=link_to "チャットルームへ",chat_rooms_path(current_user.prefecture_now_id) %></li>
   <li><%=link_to "マイページへ",user_path(current_user.id)%></li>
   <li><%= link_to "スケジュール確認/作成",events_path(current_user.prefecture_now_id)%></li>
   <li>その他</li>
   <li><%=link_to"検索","#"%></li>
- 
+  <%else%>
+    <li><%=link_to"TOPページへ",root_path%></li>
+  
+  <li>その他</li>
+  <li><%=link_to"検索","#"%></li>
+ <%end%>
 
 
 </div>
