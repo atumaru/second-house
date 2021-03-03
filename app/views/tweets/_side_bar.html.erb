@@ -28,6 +28,8 @@
   <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: '全ての都道府県'}, {class:"prefecture", id:"user-now-prefecture"} %>
   
   <div><%= f.submit "検索", class: "search-btn" %></div>
+<% end %>
+<%end%>
 
 
 
