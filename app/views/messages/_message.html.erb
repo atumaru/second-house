@@ -3,7 +3,7 @@
  
  <div class="mycomment">
  
-  <p><%= "#{message.user.nickname}: #{message.content}" %></p>
+  <p><%= "#{message.user.nickname}: #{message.content}" %></p><br><%= l message.created_at %>
   </div> 
   <%else%>
   <div class="balloon6">
@@ -13,7 +13,7 @@
     <div class="chatting">
      
   <div class="says">
-<p><%= "#{message.user.nickname}: #{message.content}" %></p>
+<p><%= "#{message.user.nickname}: #{message.content}" %></p><br><%= l message.created_at %>
 </div>
     </div>
   </div>
