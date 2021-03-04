@@ -1,0 +1,52 @@
+// Place all the styles related to the event_adds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event_member {
+  counter-reset:number; 
+  list-style-type: none!important; 
+  padding:0;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+.event_member li {
+  padding: 0.5em 0;
+  position: relative;
+  padding-left: 1.4em;
+  line-height: 1.5em;
+}
+.event_member li:before{
+  counter-increment: number;
+  content: counter(number) ".";
+  position: absolute;
+  left: 0;
+  font-family: 'Bradley Hand','Segoe Script','Segoe Print',sans-serif;
+  font-size: 1.3em;
+}
+
+.event_member_color {
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.event_member_title  {
+  margin-bottom: 20px;
+
+}
+
+.event_color_main {
+  
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 700px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white	;
+  box-sizing: border-box;
+  height: 500px;
+
+}
+

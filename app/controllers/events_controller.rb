@@ -3,10 +3,7 @@ class EventsController < ApplicationController
   def index
     now_id = current_user.prefecture_now_id
     @events = Event.where(prefecture_id: now_id)
-   
-
-    
-  end
+    end
   
   def new
     @event = Event.new
@@ -25,6 +22,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @like = current_user.likes.new(event_id: @event.id)
+   @likes = Like.where(event_id: @event.id)
   end
 
 

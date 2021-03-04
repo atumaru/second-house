@@ -1,0 +1,19 @@
+<div class="event_main">
+
+<div class="side-bar">
+    <%= render partial: "events/side_bar" %>
+  </div>
+ <div class="event_color_main">
+  <div class="event_member_color">
+   <h1 class="event_member_title"><%="#{@event.title}の参加者"%></h1>
+  <ul class="event_member">
+  
+  <%@likes.each do |like|%>
+  
+  <li><%="#{like.user.nickname}さん"%></li>
+  
+  <%end%>
+  </ul>
+  </div>
+  </div>
+  </div>

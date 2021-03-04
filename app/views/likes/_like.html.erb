@@ -1,0 +1,35 @@
+<%if user_signed_in? %>
+
+ <% if Like.find_by(user_id: current_user.id, event_id: event.id) %>
+
+ <%=link_to  event_like_path(event, event.likes), 
+
+ {method: "delete", remote: true, class: "likes-count"} do %>
+<div class="like_add">
+<h2>参加希望者はクリックしてください</h2>
+  <i class="fas fa-heart unlike-btn">♥</i>
+
+ <%= event.likes.count %>
+</div>
+ <% end %>
+
+ <% else %>
+
+ <%=link_to  event_likes_path(event), 
+
+ {method: "post", remote: true, class: "likes-count"} do %>
+<div class="like_add">
+<h2>参加希望者はクリックしてください</h2>
+  <i class="far fa-heart like-btn" >♡</i>
+
+ <%= event.likes.count %>
+</div>
+ <% end %>
+
+<% end %>
+
+ <% else %>
+
+ <i class="far fa-heart"></i><%= event.likes.count %>
+
+<% end %>
