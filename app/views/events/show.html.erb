@@ -1,3 +1,4 @@
+
 <div class="event_show ">
 <div class="side-bar">
     <%= render partial: "side_bar" %>
@@ -8,13 +9,20 @@
   <li><span>タイトル</span>:<%= @event.title%></li>
   <li><span>開始時間</span>:<%= @event.start_time%></li>
     <li><span>活動内容</span>:<%= @event.content%></li>
-  
+   
 </ul>
+<div id="like-<%= @event.id %>">
+
+<%= render 'likes/like', { event: @event} %>
+
+</div>
+
   <div class="event_edit_destroy">
    <% if user_signed_in? && current_user.id == @event.user_id %>
   <%= link_to "編集する", edit_event_path(@event) %>
   <%= link_to "削除する", event_path(@event), method: :delete,data: { confirm: '予定を削除しますか？' }  %>
   <%end%>
+  <%=link_to"参加予定者はこちら", event_adds_path(id: @event.id)%>
 </div>
 </div>
 </div>

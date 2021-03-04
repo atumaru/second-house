@@ -5,6 +5,7 @@ Rails.application.routes.draw do
  
   root to: "tweets#index"
   resources :tweets do
+    
     resources :comments, only:[:create] 
     collection do
       get 'search'
@@ -17,13 +18,13 @@ Rails.application.routes.draw do
   end
   resources :rooms,only:[:index,:new,:destroy,:create,:show]  do
     resources :messages,only:[:index,:create]
-    
   end
-  resources :events 
-  
-  
+  resources :events do
+    resources :likes, only: [:create, :destroy]
+  end
   resources :users,    only:[:show,:edit,:update]
-  
   resources :prefecture_tweets,only:[:index]
+  resources :event_adds,only:[:index]
+ 
   
 end

@@ -14,6 +14,13 @@
 <p><%=@tweet.text%></p>
 </div>
 
+
+<div id="favorite-<%= @tweet.id %>">
+
+
+
+</div>
+
         <% if user_signed_in? %>
           <%= form_with model: [ @tweet,@comment], local: true do |f|%>
             <div class="field">

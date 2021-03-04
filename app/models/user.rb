@@ -31,8 +31,12 @@ has_many :rooms, through: :room_users
 has_many :messages 
 has_many :tweets
 has_many :comments
+has_many :likes, dependent: :destroy
+has_many :like_events, through: :likes, source: :event
+
 belongs_to :prefecture  
 belongs_to :prefecture_now
+
 
 private
 
