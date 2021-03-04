@@ -42,8 +42,8 @@
         <% if user_signed_in? && current_user.id == @tweet.user_id %>
       
         <div class="prototype__manage">
-          <%= link_to "編集する", edit_tweet_path(@tweet), class: :prototype__btn %>
-          <%= link_to "削除する", tweet_path(@tweet), method: :delete, class: :prototype__btn %>
+          <%= link_to "編集する", edit_tweet_path(@tweet) %>
+          <%= link_to "削除する", tweet_path(@tweet), data: { confirm: '投稿を削除しますか？' } %>
         </div>
         <%end%>
       </div>
