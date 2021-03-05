@@ -8,8 +8,8 @@
   <li><%=link_to "チャットルームへ",chat_rooms_path(current_user.prefecture_now_id) %></li>
   <li><%=link_to "マイページへ",user_path(current_user.id)%></li>
   <li><%= link_to "スケジュール確認/作成",events_path(current_user.prefecture_now_id)%></li>
-  <li>その他</li>
-  <li><%=link_to"検索","#"%></li>
+  <li><%= link_to "新規活動報告",new_tweet_path%></li>
+  
   <%= search_form_for p, url: search_tweets_path   do |f| %>
   <%= f.search_field :title_or_text_cont, placeholder: "他の投稿を検索する", class: "search-input" %>
   
@@ -20,8 +20,7 @@
 <%else%>
 <li><%=link_to"TOPページへ",root_path%></li>
 
-  <li>その他</li>
-  <li><%=link_to"検索","#"%></li>
+ 
   <%= search_form_for p, url: search_tweets_path   do |f| %>
   <%= f.search_field :title_or_text_cont, placeholder: "他の投稿を検索する", class: "search-input" %>
   

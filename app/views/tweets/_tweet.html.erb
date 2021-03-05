@@ -4,7 +4,7 @@
  
  </div>
  <div class="tweet_image">
-  <%= link_to image_tag(tweet.image), tweet_path(tweet.id) %>
+  <%= link_to image_tag(tweet.image), tweet_path(tweet.id) if tweet.image.attached? %>
   </div>
   
     <div class="tweet_text">

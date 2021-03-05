@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: %i[index new create show edit update destroy]
+  before_action :set_id,only: %i[show edit update destroy]
+  before_action :move_to_index, only: %i[edit destroy]
   
   def index
     now_id = current_user.prefecture_now_id
@@ -21,33 +24,25 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
     @like = current_user.likes.new(event_id: @event.id)
    @likes = Like.where(event_id: @event.id)
   end
 
 
   def edit
-   
-  
-    @event = Event.find(params[:id])
+
   end
   
   def update
-   
-  
-    @event = Event.find(params[:id])
     if 
       @event.update(event_params)
       redirect_to event_path(@event)
     else
       render :edit
     end
-  
   end
 
   def destroy
-    @event = Event.find(params[:id])
     if @event.destroy
       redirect_to events_path
     end
@@ -56,9 +51,19 @@ class EventsController < ApplicationController
 
   private
 
+   def set_id
+    @event = Event.find(params[:id])
+   end
+
 
   def event_params
     params.require(:event).permit(:title, :content, :start_time).merge(user_id:current_user.id,prefecture_id:current_user.prefecture_now_id)
+  end
+
+  def move_to_index
+    if current_user.id != @event.user_id
+      redirect_to action: :index
+    end
   end
 
 end

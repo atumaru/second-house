@@ -1,8 +1,9 @@
 <div class="user_page">
 <div class="side-bar">
-    <%= render partial: "tweets/side_bar",locals: {p: @p} %>
+    <%= render partial: "events/side_bar" %>
   </div>
 <div class="user_profile">
+<%if current_user.id == @user.id%>
 <h1><%="#{@user.nickname}さんのプロフィール"%>
 <ul class="my_page">
   <li><%= "ニックネーム:#{@user.nickname}"%></li>
@@ -13,5 +14,17 @@
   <li><%= "出身地:#{@user.prefecture_now.name}"%></li>
 </ul>
 <%=link_to"プロフィール更新",edit_user_path(current_user),class:"user_edit"%>
+<%else%>
+<h1><%="#{@user.nickname}さんのプロフィール"%>
+<ul class="my_page">
+  <li><%= "ニックネーム:#{@user.nickname}"%></li>
+  
+  <li><%= "苗字:#{@user.last_name}"%></li>
+  <li><%= "名前:#{@user.first_name}"%></li>
+  <li><%= "出身地:#{@user.prefecture.name}"%></li>
+  <li><%= "出身地:#{@user.prefecture_now.name}"%></li>
+</ul>
+<%end%>
+
 </div>
 </div>

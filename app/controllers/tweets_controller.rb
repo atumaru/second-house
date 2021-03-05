@@ -1,5 +1,8 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: %i[ new create]
+  before_action :authenticate_user!, only: %i[ new edit create]
+  before_action :set_search_id,      only: %i[new create show edit update search]
+  before_action :set_tweet_id,       only: %i[show edit update destroy move_to_show]
+  before_action :move_to_show,       only: %i[edit destroy]
 
 def index
   
@@ -8,15 +11,11 @@ def index
 end
 
 def new
-  @p =Tweet.ransack(params[:q])  
-  @results = @p.result
-  @tweet = Tweet.new
-  
+  @tweet = Tweet.new 
 end
 
 def create
-  @p =Tweet.ransack(params[:q])  
-  @results = @p.result
+  
    @tweet = Tweet.create(tweet_params)
    
   if @tweet.save
@@ -27,26 +26,14 @@ def create
 end
 
 def show
-  @p =Tweet.ransack(params[:q])  
-  @results = @p.result
-  @tweet = Tweet.find(params[:id])
   @comment = Comment.new
   @comments = @tweet.comments.includes(:user)
-  
 end
 
 def edit
-  @p =Tweet.ransack(params[:q])  
-  @results = @p.result
-
-  @tweet = Tweet.find(params[:id])
 end
 
 def update
-  @p =Tweet.ransack(params[:q])  
-  @results = @p.result
-
-  @tweet = Tweet.find(params[:id])
   if 
     @tweet.update(tweet_params)
     redirect_to tweet_path(@tweet)
@@ -57,13 +44,9 @@ def update
 end
 
 def search
-  @p =Tweet.ransack(params[:q])  
-  @results = @p.result
-
 end
 
 def destroy
-  @tweet = Tweet.find(params[:id])
   if @tweet.destroy
     redirect_to prefecture_tweets_path(id:current_user.prefecture_now_id)
   end
@@ -71,6 +54,22 @@ end
 
 
 private
+
+def move_to_show
+  if current_user.id != @tweet.user_id
+    redirect_to prefecture_tweets_path(id:current_user.prefecture_now_id)
+  end
+end
+
+def set_tweet_id 
+  @tweet = Tweet.find(params[:id])
+end
+
+def set_search_id
+  @p =Tweet.ransack(params[:q])  
+  @results = @p.result
+end
+
 
 def tweet_params
   params.require(:tweet).permit(:title,:text,:image).merge(user_id: current_user.id,prefecture_id: current_user.prefecture_now_id)

@@ -6,11 +6,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     
     if @comment.save
-      redirect_to root_path
+      redirect_to  tweet_path(@comment.tweet_id)
     else
-      @tweet = @comment.tweet
-      @comments = @tweet.comments
-      render "#"
+    
+      redirect_to  tweet_path(@comment.tweet_id)
+      
     end
 
   end
