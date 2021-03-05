@@ -23,6 +23,7 @@
 
         <% if user_signed_in? %>
           <%= form_with model: [ @tweet,@comment], local: true do |f|%>
+           <%= render 'shared/error', model: f.object %>
             <div class="field">
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text %>
@@ -48,7 +49,7 @@
 
         <% if user_signed_in? && current_user.id == @tweet.user_id %>
       
-        <div class="prototype__manage">
+        <div class="tweet__manage">
           <%= link_to "編集する", edit_tweet_path(@tweet) %>
           <%= link_to "削除する", tweet_path(@tweet), data: { confirm: '投稿を削除しますか？' } %>
         </div>

@@ -1,10 +1,12 @@
 class ChatRoomsController < ApplicationController
-  def index
-    
-    now_id = current_user.prefecture_now_id
-    @rooms = Room.where(prefecture_id: now_id)
 
-    
+  before_action :authenticate_user!, only: %i[index search]
+  
+
+
+  def index
+    now_id = current_user.prefecture_now_id
+      @rooms = Room.where(prefecture_id: now_id)
 
   end
 
@@ -18,7 +20,7 @@ class ChatRoomsController < ApplicationController
       @rooms = @room.where(prefecture_id: now_id)
     end
     
-        
+    
 
   
 

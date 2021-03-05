@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: %i[index create new destroy] 
-  
+  before_action :authenticate_user!, only: %i[index show create new destroy] 
+  before_action :set_room_id,        only: %i[show destroy move_to_root]
+   before_action :move_to_root,      only: %i[show]
   def index
     @room = Room.new  
   end
@@ -26,11 +27,9 @@ class RoomsController < ApplicationController
 
     now_id = current_user.prefecture_now_id
     @rooms = Room.where(prefecture_id: now_id)
-
-
-    @room = Room.find(params[:id])
+    
     @messages = @room.messages
-    if @message.present?
+    if @messages.present?
     @message = Message.find(params[:id])
     end
   end
@@ -43,7 +42,7 @@ class RoomsController < ApplicationController
 
 
   def destroy
-    room = Room.find(params[:id])
+  
     room.destroy
     redirect_to root_path
   end
@@ -52,7 +51,19 @@ class RoomsController < ApplicationController
 
   private
 
+  def set_room_id
+    @room = Room.find(params[:id])
+   end
   
+  
+   def move_to_root
+    
+     if current_user.prefecture_now_id != @room.prefecture_id
+       redirect_to  chat_rooms_path(current_user.prefecture_now_id)
+     end
+   end
+
+   
   def room_params
     params.require(:room).permit(:name).merge(prefecture_id:current_user.prefecture_now_id)
   end
