@@ -43,19 +43,19 @@ private
 def add_prefecture
 
   if prefecture_id == prefecture_now_id
-    errors.add(:prefecture_id, "出身地と現在のお住まいは違う県を選んでください")
+    errors.add(:prefecture_id, "と現在のお住まいは違う県を選んでください ※")
   end
 end
 
 def add_prefecture_id
 if prefecture_id == 1
-errors.add(:prefecture_id, "出身地を選択してください")
+errors.add(:prefecture_id, "を選択してください")
 end
 end
 
 def add_prefecture_now_id
   if prefecture_now_id == 1
-  errors.add(:prefecture_now_id, "出身地を選択してください")
+  errors.add(:prefecture_now_id, "を選択してください")
   end
   end
 
