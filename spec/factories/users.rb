@@ -7,6 +7,6 @@ FactoryBot.define do
     first_name            {"太郎"}
     last_name             {"山田"}
     prefecture_id            {3}
-    prefecture_now_id        {3}
+    prefecture_now_id        {4}
   end
 end
