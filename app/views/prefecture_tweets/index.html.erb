@@ -1,9 +1,18 @@
 <div class ="wrapper">
+
 <div class="side-bar">
     <%= render partial:"tweets/side_bar",locals: {p: @p} %>
   </div>
 
+  
+    
 <div class="tweet_sub">
+<%if @prefecture_tweets.present?%>
+<h1><%=@name%></h1>
+<%else%>
+<h2 class="tweet_none"><%="#{@name}はまだありません"%></h2>
+<%end%>
 <%= render partial: 'prefecture_tweet', collection: @prefecture_tweets %>
 </div>
+
 </div>

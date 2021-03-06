@@ -1,8 +1,9 @@
-<div class ="wrapper">
+<div class ="tweet_wrapper">
 <div class="side-bar">
 <%= render partial: "side_bar",locals: {p: @p} %>
 </div>
-<div>
+
+<div class="tweet_all_ver" >
  <% @results.each do |tweet| %>
     <%= render partial: "tweet", locals: { tweet: tweet } %>
   <% end %>

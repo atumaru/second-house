@@ -1,7 +1,9 @@
 class Room < ApplicationRecord
-  has_many :room_users, dependent: :destroy
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  has_many :room_users
   has_many :users, through: :room_users  
-  has_many :messages, dependent: :destroy
+  has_many :messages
+  belongs_to :prefecture
  
   validates :name, presence: true
 

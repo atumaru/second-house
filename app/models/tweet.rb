@@ -5,7 +5,6 @@ class Tweet < ApplicationRecord
 
   belongs_to :user
   belongs_to :prefecture
- 
   has_many :comments, dependent: :destroy
   with_options presence: true do
     validates :title
