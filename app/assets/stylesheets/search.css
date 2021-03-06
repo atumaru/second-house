@@ -1,0 +1,13 @@
+.tweet_wrapper {
+  display: flex;
+  position: relative;
+}
+
+.tweet_all_ver {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em;
+  background: white;
+}

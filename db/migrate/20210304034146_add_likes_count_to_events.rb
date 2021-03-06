@@ -3,3 +3,4 @@ class AddLikesCountToEvents < ActiveRecord::Migration[6.0]
     add_column :events, :likes_count, :integer
   end
 end
+ 
