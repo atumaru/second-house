@@ -3,15 +3,11 @@ class PrefectureTweetsController < ApplicationController
     @id = params[:id]
     @name = params[:name]
 
-    @p =Tweet.ransack(params[:q])  
+    @p = Tweet.ransack(params[:q])
     @results = @p.result
-  
+
     @prefecture_tweets = Tweet.where(prefecture_id: @id)
-   
-    if @prefecture_tweet.present?
-      @tweet = Tweet.find(params[:id])
-    end
-    
-    
+
+    @tweet = Tweet.find(params[:id]) if @prefecture_tweet.present?
   end
 end

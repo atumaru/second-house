@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :comment do
-    text{"こんにちは"}
+    text { 'こんにちは' }
     association :user
     association :tweet
   end

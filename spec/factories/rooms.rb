@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :room do
-    name {"test"}
-    
+    name { 'test' }
   end
 end

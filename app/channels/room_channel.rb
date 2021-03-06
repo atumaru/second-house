@@ -9,6 +9,6 @@ class RoomChannel < ApplicationCable::Channel
 
   def speak(data)
     message = Message.create! content: data['message'], user_id: current_user.id, room_id: params['room']
-    MessageBroadcastJob.perform_later(message,current_user)
+    MessageBroadcastJob.perform_later(message, current_user)
   end
 end
